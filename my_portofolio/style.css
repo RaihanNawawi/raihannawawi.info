@@ -1,26 +1,40 @@
-  * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-
-  html,
-  body {
-    height: 100%;
-    /* Mencegah scroll default */
-    overflow: hidden;
-  }
-
-  /* Profile */
-  img {
-  image-rendering: crisp-edges;
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: pixelated;
 }
-  /* End Profile */
+
+html,
+body {
+    height: 100%;
+    /* Mencegah scroll default pada desktop */
+    overflow: hidden;
+}
+
+/* Tambahkan media query untuk tampilan mobile */
+@media (max-width: 768px) {
+    html,
+    body {
+        /* Izinkan scroll pada tampilan mobile */
+        overflow: auto;
+    }
+
+    section {
+        height: auto; /* Setiap section tidak perlu memenuhi viewport pada mobile */
+        min-height: 100vh; /* Setiap section minimal setinggi viewport */
+    }
+}
+
+/* Profile */
+img {
+    image-rendering: crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: pixelated;
+}
+/* End Profile */
 
 /* One Page Scroll Style */
-  section {
+section {
     width: 100vw;
     height: 100vh;
     /* Setiap section memenuhi viewport */
@@ -29,67 +43,66 @@
     justify-content: center;
     font-size: 2rem;
     transition: transform 0.8s ease-in-out;
-  }
-  /* End One Page Scroll Style */
+}
+/* End One Page Scroll Style */
 
-  /* Marquee Icon */
-  @keyframes marquee {
+/* Marquee Icon */
+@keyframes marquee {
     from {
-      transform: translateX(0);
+        transform: translateX(0);
     }
 
     to {
-      transform: translateX(-50%);
+        transform: translateX(-50%);
     }
-  }
+}
 
-  .animate-marquee {
+.animate-marquee {
     display: flex;
     animation: marquee 10s linear infinite;
-  }
+}
 
-  .pause {
+.pause {
     animation-play-state: paused;
-  }
-  /* End Marquee Icon */
+}
+/* End Marquee Icon */
 
-  /* Style Floating Navbar Desktop & Mobile */
+/* Style Floating Navbar Desktop & Mobile */
 
-  /* Active State - Desktop */
+/* Active State - Desktop */
 .nav-link.active {
-  border-left-color: black !important;
-  color: black;
-  font-weight: bold;
+    border-left-color: black !important;
+    color: black;
+    font-weight: bold;
 }
 
 /* Active State - Mobile */
 .mobile-link.active i {
-  color: #1D4ED8 !important; /* Warna biru */
-  transform: scale(1.2);
-  transition: all 0.3s ease-in-out;
+    color: #1D4ED8 !important; /* Warna biru */
+    transform: scale(1.2);
+    transition: all 0.3s ease-in-out;
 }
 
 /* Tooltip Styling */
 .tooltip {
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 4px 8px;
-  font-size: 12px;
-  border-radius: 6px;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s, transform 0.3s;
-  white-space: nowrap;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 6px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, transform 0.3s;
+    white-space: nowrap;
 }
 
 .mobile-link:hover .tooltip {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(-4px);
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-4px);
 }
 /* End Style Floating Navbar Desktop & Mobile */
-
