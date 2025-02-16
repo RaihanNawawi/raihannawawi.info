@@ -68,45 +68,70 @@ document.addEventListener("DOMContentLoaded", function () {
 
    // JavaScript untuk navigasi scroll
     document.addEventListener("DOMContentLoaded", () => {
-      let sections = document.querySelectorAll("section");
-      let currentIndex = 0;
-      let isScrolling = false;
+  let sections = document.querySelectorAll("section");
+  let currentIndex = 0;
+  let isScrolling = false;
 
-      function scrollToSection(index) {
-        if (index >= 0 && index < sections.length) {
-          isScrolling = true;
-          sections[index].scrollIntoView({ behavior: "smooth" });
+  function scrollToSection(index) {
+    if (index >= 0 && index < sections.length) {
+      isScrolling = true;
+      sections[index].scrollIntoView({ behavior: "smooth" });
 
-          setTimeout(() => {
-            isScrolling = false;
-          }, 800); // Waktu yang sama dengan animasi CSS
-        }
-      }
-      
-      document.addEventListener("wheel", (event) => {
-        if (isScrolling) return;
+      setTimeout(() => {
+        isScrolling = false;
+      }, 800); // Waktu yang sama dengan animasi CSS
+    }
+  }
 
-        if (event.deltaY > 0) {
-          currentIndex = Math.min(currentIndex + 1, sections.length - 1);
-        } else {
-          currentIndex = Math.max(currentIndex - 1, 0);
-        }
+  document.addEventListener("wheel", (event) => {
+    if (isScrolling) return;
 
-        scrollToSection(currentIndex);
-      });
+    if (event.deltaY > 0) {
+      currentIndex = Math.min(currentIndex + 1, sections.length - 1);
+    } else {
+      currentIndex = Math.max(currentIndex - 1, 0);
+    }
 
-      document.addEventListener("keydown", (event) => {
-        if (isScrolling) return;
+    scrollToSection(currentIndex);
+  });
 
-        if (event.key === "ArrowDown") {
-          currentIndex = Math.min(currentIndex + 1, sections.length - 1);
-        } else if (event.key === "ArrowUp") {
-          currentIndex = Math.max(currentIndex - 1, 0);
-        }
+  document.addEventListener("keydown", (event) => {
+    if (isScrolling) return;
 
-        scrollToSection(currentIndex);
-      });
-    });
+    if (event.key === "ArrowDown") {
+      currentIndex = Math.min(currentIndex + 1, sections.length - 1);
+    } else if (event.key === "ArrowUp") {
+      currentIndex = Math.max(currentIndex - 1, 0);
+    }
+
+    scrollToSection(currentIndex);
+  });
+
+  // Tambahkan event listener untuk touch events pada mobile
+  let touchStartY = 0;
+  let touchEndY = 0;
+
+  document.addEventListener("touchstart", (event) => {
+    touchStartY = event.changedTouches[0].screenY;
+  });
+
+  document.addEventListener("touchend", (event) => {
+    touchEndY = event.changedTouches[0].screenY;
+    handleGesture();
+  });
+
+  function handleGesture() {
+    if (isScrolling) return;
+
+    if (touchEndY < touchStartY) {
+      currentIndex = Math.min(currentIndex + 1, sections.length - 1);
+    } else if (touchEndY > touchStartY) {
+      currentIndex = Math.max(currentIndex - 1, 0);
+    }
+
+    scrollToSection(currentIndex);
+  }
+});
     // JavaScript untuk navigasi scroll END
 
     // JavaScript untuk Floating Navbar
