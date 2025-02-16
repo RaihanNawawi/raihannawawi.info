@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raihan Nawawi - Portfolio</title>
+  <!-- FontAwesome -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"
+    crossorigin="anonymous"></script>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- CSS Native-->
+  <link rel="stylesheet" href="style.css">
+  <!-- Js Native -->
+  <script src="script.js"></script>
+  <!-- Alphine Js -->
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+</head>
+
+<body class="bg-white text-black">
+  <!-- Background Pattern -->
+  <div class="fixed inset-0 z-0">
+    <svg width="1600" height="1600"
+      class="absolute inset-0 h-full w-full [mask-image:radial-gradient(400px_circle_at_center,white,transparent)]">
+      <defs>
+        <pattern id="grid-pattern" width="20" height="20" patternUnits="userSpaceOnUse">
+          <rect width="20" height="20" fill="transparent" stroke="rgba(0,0,0,0.1)" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#grid-pattern)" />
+    </svg>
+  </div>
+  <!-- Home Section -->
+  <section id="home" class="section flex flex-col items-center justify-center text-center">
+    <div class="flex flex-col items-center">
+      <div class="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 rounded-full border-4 border-gray-800 overflow-hidden z-10">
+        <picture>
+          <source srcset="img/profile1.webp" type="image/webp">
+          <img src="img/profile1.webp" alt="Profile Picture" class="w-full h-full object-cover object-center"
+            loading="lazy" />
+        </picture>
+      </div>
+      <h1 class="text-4xl font-bold mt-4">Raihan Nawawi</h1>
+      <p class="text-lg text-gray-600">Student Full-stack Developer</p>
+    </div>
+  </section>
+  <!-- About Me Section -->
+<section id="about" class="section flex flex-col items-center justify-center text-center px-6 min-h-screen mt-12">
+  <h2 class="text-3xl font-bold">About Me</h2>
+  <div class="space-y-6 max-w-2xl mx-auto text-justify py-3">
+    <p class="text-gray-700 text-base md:text-lg leading-relaxed tracking-wide">
+      I am a high school student and programmer from Indonesia with a passion for web and backend development.
+    </p>
+    <p class="text-gray-700 text-base md:text-lg leading-relaxed tracking-wide">
+      In the past 2 years, I have learned <b>HTML, CSS (Tailwind CSS), JavaScript, PHP, Python, and MySQL</b>. I have
+      experience in creating minimalist and modern websites.
+    </p>
+  </div>
+  <div class="space-y-6 max-w-2xl mx-auto text-justify py-3">
+    <!-- Container Grid -->
+    <div class="relative overflow-hidden w-full" x-data="{ scroll: true }" @mouseenter="scroll = false"
+      @mouseleave="scroll = true">
+      <div class="flex w-max space-x-6 animate-marquee" :class="{ 'pause': !scroll }">
+        <template x-for="i in 2" :key="i">
+          <div class="flex space-x-6">
+            <!-- HTML -->
+            <div class="group flex flex-col items-center">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML"
+                class="w-16 h-16 transition-transform duration-300 group-hover:scale-110">
+              <span class="text-sm mt-2 font-medium text-gray-700">HTML</span>
+            </div>
+            <!-- CSS -->
+            <div class="group flex flex-col items-center">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS"
+                class="w-16 h-16 transition-transform duration-300 group-hover:scale-110">
+              <span class="text-sm mt-2 font-medium text-gray-700">CSS</span>
+            </div>
+            <!-- JavaScript -->
+            <div class="group flex flex-col items-center">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript"
+                class="w-16 h-16 transition-transform duration-300 group-hover:scale-110">
+              <span class="text-sm mt-2 font-medium text-gray-700">JavaScript</span>
+            </div>
+            <!-- PHP -->
+            <div class="group flex flex-col items-center">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg" alt="PHP"
+                class="w-16 h-16 transition-transform duration-300 group-hover:scale-110">
+              <span class="text-sm mt-2 font-medium text-gray-700">PHP</span>
+            </div>
+            <!-- MySQL -->
+            <div class="group flex flex-col items-center">
+              <img src="https://upload.wikimedia.org/wikipedia/en/d/dd/MySQL_logo.svg" alt="MySQL"
+                class="w-16 h-16 transition-transform duration-300 group-hover:scale-110">
+              <span class="text-sm mt-2 font-medium text-gray-700">MySQL</span>
+            </div>
+            <!-- Tailwind CSS -->
+            <div class="group flex flex-col items-center">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" alt="Tailwind CSS"
+                class="w-16 h-16 transition-transform duration-300 group-hover:scale-110">
+              <span class="text-sm mt-2 font-medium text-gray-700">Tailwind CSS</span>
+            </div>
+            <!-- Python -->
+            <div class="group flex flex-col items-center">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python"
+                class="w-16 h-16 transition-transform duration-300 group-hover:scale-110">
+              <span class="text-sm mt-2 font-medium text-gray-700">Python</span>
+            </div>
+          </div>
+        </template>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Projects Section -->
+  <section id="project" class="section flex flex-col items-center justify-center text-center px-6 min-h-screen">
+    <h2 class="text-3xl font-bold text-black mb-4">Projects</h2>
+    <p class="text-gray-600 text-sm">A collection of projects that I have created. There will be more projects in
+      the future in the future!</p>
+    <!-- Container Proyek -->
+    <div id="projectContainer" class="w-full max-w-6xl mx-auto z-10">
+      <!-- Project Card -->
+      <div
+        class="project-card bg-transparent border border-gray-200 dark:border-gray-500 rounded-lg shadow-md p-5 flex flex-col items-start text-left w-96">
+        <div class="flex items-center gap-4 mb-4">
+          <picture class="shrink-0">
+            <source srcset="img/ic.webp" type="image/webp">
+            <img src="img/ic.webp" alt="Profile Picture" class="w-20 h-20 object-contain" loading="lazy" />
+          </picture>
+          <div>
+            <h3 class="text-lg font-semibold text-black">SMASTIC BLOG</h3>
+            <p class="text-gray-600 text-sm">
+              Prototype Web Design (Admin Dashboard + Blog Page)
+            </p>
+          </div>
+        </div>
+        <!-- Card Footer -->
+        <div class="flex flex-col md:flex-row justify-between items-center w-full mt-4 gap-4">
+          <!-- Tombol Highlight -->
+          <button onclick="openModal('https://www.youtube.com/embed/plM239ANaMY?si=XnULkfGIz_4IEkRT&autoplay=1')" class="flex items-center gap-2 text-black border border-black px-4 py-2 rounded-md text-sm 
+    hover:bg-black hover:text-white transition w-full justify-center">
+            <i class="fas fa-video"></i> Highlight
+          </button>
+
+          <!-- Container untuk Visit Website & GitHub -->
+          <div class="flex flex-row justify-center items-center gap-4 w-full md:w-auto">
+            <!-- Visit Website -->
+            <a href="https://yourwebsite.com" target="_blank"
+              class="flex items-center space-x-1 text-gray-500 hover:text-black transition text-sm">
+              <i class="fas fa-globe"></i> <span>Visit Website</span>
+            </a>
+
+            <!-- Visit GitHub -->
+            <a href="https://github.com/RaihanNawawi/BLOG_PROJECT_1" target="_blank"
+              class="flex items-center space-x-1 text-gray-500 hover:text-black transition text-sm">
+              <i class="fab fa-github"></i> <span>Visit GitHub</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Floating Video Modal -->
+        <div id="videoModal"
+          class="fixed inset-0 flex items-center justify-center bg-black/70 backdrop-blur-md hidden z-50">
+          <!-- Tombol Close Terpisah -->
+          <button onclick="closeModal()" class="absolute top-5 right-5 text-white bg-transparent 
+                     w-10 h-10 flex items-center justify-center">
+            <i class="fas fa-times"></i>
+          </button>
+
+          <!-- Video Frame -->
+          <div class="relative w-[90%] max-w-3xl bg-white rounded-2xl shadow-2xl p-1 border border-white/20">
+            <!-- Embed YouTube Video -->
+            <div class="relative w-full rounded-xl overflow-hidden shadow-lg">
+              <iframe id="videoFrame" class="w-full h-[400px] rounded-xl" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+        <!-- End of Floating Video Modal -->
+      </div>
+    </div>
+    <!-- More Projects Soon -->
+    <p class="text-gray-500 text-sm mt-16 italic">More Projects Soon...</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="w-full max-w-3xl mx-auto text-center py-16 px-4 flex flex-col items-center gap-6">
+    <h2 class="text-3xl font-semibold text-gray-900 dark:text-white">Contact Me</h2>
+    <p class="text-gray-600 dark:text-gray-400 text-lg mt-2">
+      Follow me on social media or reach out via email.
+    </p>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 z-10">
+      <!-- GitHub -->
+      <a href="https://github.com/RaihanNawawi" target="_blank"
+        class="p-3 rounded-lg border border-gray-300 dark:border-gray-600 hover:bg-gray-900 hover:text-white transition duration-300 w-16 h-16 flex items-center justify-center">
+        <i class="fab fa-github text-2xl"></i>
+      </a>
+
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/raihan-nawawi-b109aa314/" target="_blank"
+        class="p-3 rounded-lg border border-gray-300 dark:border-gray-600 hover:bg-blue-700 hover:text-white transition duration-300 w-16 h-16 flex items-center justify-center">
+        <i class="fab fa-linkedin-in text-2xl"></i>
+      </a>
+
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/raihannawawi_/" target="_blank"
+        class="p-3 rounded-lg border border-gray-300 dark:border-gray-600 hover:bg-pink-500 hover:text-white transition duration-300 w-16 h-16 flex items-center justify-center">
+        <i class="fab fa-instagram text-2xl"></i>
+      </a>
+
+      <!-- Email -->
+      <a href="mailto:raihannawawi468@gmail.com"
+        class="p-3 rounded-lg border border-gray-300 dark:border-gray-600 hover:bg-green-500 hover:text-white transition duration-300 w-16 h-16 flex items-center justify-center">
+        <i class="fas fa-envelope text-2xl"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- Floating Navbar -->
+  <nav id="navbar"
+    class="floating-navbar fixed top-1/2 left-6 transform -translate-y-1/2 text-black py-6 px-4 flex-col space-y-6 max-w-max hidden md:flex">
+    <a href="#home"
+      class="nav-link flex items-center space-x-3 transition-all duration-300 border-l-4 border-transparent hover:border-black pl-4 py-2">
+      <i class="fa-solid fa-house text-xl text-gray-700"></i>
+      <span class="font-semibold text-lg tracking-wide text-gray-800 hover:text-black">Home</span>
+    </a>
+    <a href="#about"
+      class="nav-link flex items-center space-x-3 transition-all duration-300 border-l-4 border-transparent hover:border-black pl-4 py-2">
+      <i class="fa-solid fa-user text-xl text-gray-700"></i>
+      <span class="font-semibold text-lg tracking-wide text-gray-800 hover:text-black">About</span>
+    </a>
+    <a href="#project"
+      class="nav-link flex items-center space-x-3 transition-all duration-300 border-l-4 border-transparent hover:border-black pl-4 py-2">
+      <i class="fa-solid fa-diagram-project text-xl text-gray-700"></i>
+      <span class="font-semibold text-lg tracking-wide text-gray-800 hover:text-black">Projects</span>
+    </a>
+    <a href="#contact"
+      class="nav-link flex items-center space-x-3 transition-all duration-300 border-l-4 border-transparent hover:border-black pl-4 py-2">
+      <i class="fa-solid fa-envelope text-xl text-gray-700"></i>
+      <span class="font-semibold text-lg tracking-wide text-gray-800 hover:text-black">Contact Me</span>
+    </a>
+  </nav>
+
+  <!-- Mobile Navbar (Bottom Fixed) -->
+  <div
+    class="mobile-navbar md:hidden fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-white backdrop-blur-lg shadow-lg rounded-full px-4 py-2 flex space-x-6 items-center">
+    <a href="#home" class="mobile-link relative p-3 rounded-full transition">
+      <i class="fa-solid fa-house text-xl text-gray-700"></i>
+      <span class="tooltip">Home</span>
+    </a>
+    <a href="#about" class="mobile-link relative p-3 rounded-full transition">
+      <i class="fa-solid fa-user text-xl text-gray-700"></i>
+      <span class="tooltip">About</span>
+    </a>
+    <a href="#project" class="mobile-link relative p-3 rounded-full transition">
+      <i class="fa-solid fa-diagram-project text-xl text-gray-700"></i>
+      <span class="tooltip">Projects</span>
+    </a>
+    <a href="#contact" class="mobile-link relative p-3 rounded-full transition">
+      <i class="fa-solid fa-envelope text-xl text-gray-700"></i>
+      <span class="tooltip">Contact</span>
+    </a>
+  </div>
+
+
+</body>
+
+</html>
