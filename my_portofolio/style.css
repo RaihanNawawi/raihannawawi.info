@@ -7,21 +7,18 @@
 html,
 body {
     height: 100%;
-    /* Mencegah scroll default pada desktop */
-    overflow: hidden;
+    overflow: hidden; /* Mencegah scroll default pada desktop */
 }
 
 /* Tambahkan media query untuk tampilan mobile */
 @media (max-width: 768px) {
     html,
     body {
-        /* Izinkan scroll pada tampilan mobile */
-        overflow: auto;
+        overflow: hidden; /* Mencegah scroll default pada mobile */
     }
 
     section {
-        height: auto; /* Setiap section tidak perlu memenuhi viewport pada mobile */
-        min-height: 100vh; /* Setiap section minimal setinggi viewport */
+        height: 100vh; /* Setiap section memenuhi viewport pada mobile */
     }
 }
 
@@ -37,7 +34,6 @@ img {
 section {
     width: 100vw;
     height: 100vh;
-    /* Setiap section memenuhi viewport */
     display: flex;
     align-items: center;
     justify-content: center;
